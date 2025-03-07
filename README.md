@@ -1,8 +1,8 @@
-# Femilu custom spicetify theme extension
+# Femilu's custom spicetify theme extension
 
 This CSS <ins>extends and edits</ins> the [DefaultDynamic](https://github.com/JulienMaille/spicetify-dynamic-theme) custom spicetify theme.
 
-This custom theme extension should be loaded via the [**CSS Editor extension** from FlafyDev](https://github.com/FlafyDev/spotify-css-editor) wich can also be found on the spicetify marketplace.
+This custom theme extension should be loaded via the [**CSS Editor extension** from FlafyDev](https://github.com/FlafyDev/spotify-css-editor) which can also be found on the spicetify marketplace.
 
 ------
 >## How to "install"

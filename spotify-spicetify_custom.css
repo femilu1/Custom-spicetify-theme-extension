@@ -93,6 +93,22 @@ div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContain
   translate: 0px 1.75rem;
 }
 
+/*  Queue  */
+[aria-label="Now playing"] div.HeaderSideArea > div.HeaderSideAreaFlexContainer > div > div.x-entityImage-imageContainer.x-entityImage-xsmall > img.main-image-image.x-entityImage-image.main-image-loaded{
+  border: 0.75px solid rgba(255, 255, 255, 0.175) !important;
+  border-radius: 50% !important;
+}
+[aria-label="Now playing"] div.HeaderSideArea > div.HeaderSideAreaFlexContainer > div > div.x-entityImage-imageContainer.x-entityImage-xsmall:has(img.main-image-image.x-entityImage-image.main-image-loaded){
+  clip-path: circle(50% at 50% 50%) !important;
+  animation: rotating 42.5s linear infinite;
+}
+[aria-label="Now playing"] div.HeaderSideArea > div.HeaderSideAreaFlexContainer > div:has(div > img.main-image-image.x-entityImage-image.main-image-loaded){
+  background-color: var(--spice-text);
+  clip-path: circle(50% at 50% 50%) !important;
+  position: relative;
+  opacity: 0.85;
+}
+
 /* Mask and background styles for cover art to let look like a vinyl record */
 div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a > div > .cover-art::after, .npv-what-is-playing .npv-cover-art > div::after, .npv-lyrics .npv-cross-fade-container::after {
   content: "";
@@ -217,7 +233,8 @@ div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContain
 .Root__now-playing-bar:has(.main-nowPlayingBar-center button[aria-label=Play]) ~ .Root__right-sidebar .NowPlayingView .cover-art,
 .Root__now-playing-bar:has(.main-nowPlayingBar-center button[aria-label=Play]) ~ .Root__right-sidebar .main-nowPlayingView-coverArtContainer .cover-art,
 .npv-main-container:has(.npv-nowPlayingBar-container .npv-nowPlayingBar-center button[aria-label=Play]) .npv-what-is-playing .npv-cover-art > div,
-.npv-main-container:has(.npv-nowPlayingBar-container .npv-nowPlayingBar-center button[aria-label=Play]) .npv-lyrics .npv-cross-fade-container
+.npv-main-container:has(.npv-nowPlayingBar-container .npv-nowPlayingBar-center button[aria-label=Play]) .npv-lyrics .npv-cross-fade-container,
+[aria-label="Now playing"] div.HeaderSideArea > div.HeaderSideAreaFlexContainer > div:has(span > div > button[aria-label*=Play]) > div.x-entityImage-imageContainer.x-entityImage-xsmall
 {
   animation-play-state: paused !important;
 }

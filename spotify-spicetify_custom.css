@@ -93,6 +93,7 @@ div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContain
   translate: 0px 1.75rem;
 }
 
+
 /*  Queue  */
 [aria-label="Now playing"] div.HeaderSideArea > div.HeaderSideAreaFlexContainer > div > div.x-entityImage-imageContainer.x-entityImage-xsmall > img.main-image-image.x-entityImage-image.main-image-loaded{
   border: 0.75px solid rgba(255, 255, 255, 0.175) !important;
@@ -109,8 +110,66 @@ div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContain
   opacity: 0.85;
 }
 
+/* video-cover-image (alternate between default and this when clicked on looping video)*/
+div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV{
+  aspect-ratio: 1 / 1 !important;
+  height: auto;
+  width: auto;
+  
+  --angle_animation: 20deg !important;
+  --angle_animation-y: -12.5deg !important;
+  --scale: 0.95 !important;
+  
+  animation: rotating-angle-with-scale 12s ease-in-out alternate infinite;
+  clip-path: circle(50% at 50% 50%) !important;
+  position: relative;
+  opacity: 0.85;
+}
+
+div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV > video{
+  aspect-ratio: 1 / 1 !important;
+  filter: blur(0.15rem) hue-rotate(7.5deg);
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.175) !important;
+  border-color: rgba(var(--spice-rgb-text), 0.25) !important;
+}
+
+
+div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div:before, div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer > div:after{
+  content: none;
+  visibility: hidden;
+}
+
+
+@keyframes rotating-angle-with-scale {
+  0% {
+    transform: rotateX(var(--angle_animation)) rotateY(var(--angle_animation-y)) rotateZ(0deg) scale(var(--scale));
+  }
+
+  100% {
+    transform: rotateX(var(--angle_animation)) rotateY(var(--angle_animation-y)) rotateZ(25deg) scale(var(--scale));
+  }
+}
+
+  /* Small fixes (for video cover-image) */
+
+div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:has(> div > div > div.canvasVideoContainerNPV > video){
+  aspect-ratio: 1 !important;
+}
+
+div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA):has(> div > div > div.canvasVideoContainerNPV > video){
+  margin-top: initial !important;
+}
+
+aside.NowPlayingView > div:has(.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV) > div:nth-of-type(1) > div:is(.yvZooOj0rpfRS__cAUCo){
+  background-color: initial !important;
+  padding-inline: initial !important;
+  position: initial  !important;
+}
+
+
 /* Mask and background styles for cover art to let look like a vinyl record */
-div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a > div > .cover-art::after, .npv-what-is-playing .npv-cover-art > div::after, .npv-lyrics .npv-cross-fade-container::after {
+div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a > div > .cover-art::after, .npv-what-is-playing .npv-cover-art > div::after, .npv-lyrics .npv-cross-fade-container::after,div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV:has( > video):after {
   content: "";
   position: absolute;
   top: 0;
@@ -205,8 +264,8 @@ div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContain
   border-radius: 50%;
 }
 
-/* Mask styles for small cover art images */
-div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a > div > .cover-art > img, .npv-what-is-playing .npv-cover-art > div > img, .npv-lyrics .npv-cross-fade-container > img{
+/* Mask for small dot in cover art image */
+div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a > div > .cover-art > img, .npv-what-is-playing .npv-cover-art > div > img, .npv-lyrics .npv-cross-fade-container > img, div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV > video{
   mask-image: radial-gradient(circle, rgb(0 0 0 / 0%) 3%, rgb(0 0 0) 4%, rgb(0 0 0) 100%);
   mask-size: 100% 100%, contain;
   mask-repeat: no-repeat;
@@ -234,7 +293,8 @@ div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContain
 .Root__now-playing-bar:has(.main-nowPlayingBar-center button[aria-label=Play]) ~ .Root__right-sidebar .main-nowPlayingView-coverArtContainer .cover-art,
 .npv-main-container:has(.npv-nowPlayingBar-container .npv-nowPlayingBar-center button[aria-label=Play]) .npv-what-is-playing .npv-cover-art > div,
 .npv-main-container:has(.npv-nowPlayingBar-container .npv-nowPlayingBar-center button[aria-label=Play]) .npv-lyrics .npv-cross-fade-container,
-[aria-label="Now playing"] div.HeaderSideArea > div.HeaderSideAreaFlexContainer > div:has(span > div > button[aria-label*=Play]) > div.x-entityImage-imageContainer.x-entityImage-xsmall
+[aria-label="Now playing"] div.HeaderSideArea > div.HeaderSideAreaFlexContainer > div:has(span > div > button[aria-label*=Play]) > div.x-entityImage-imageContainer.x-entityImage-xsmall,
+.Root__now-playing-bar:has(.main-nowPlayingBar-center button[aria-label=Play]) ~ .Root__right-sidebar .main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV
 {
   animation-play-state: paused !important;
 }

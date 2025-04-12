@@ -10,21 +10,21 @@ This custom theme extension should be loaded via the [**CSS Editor extension** f
 >Just copy and paste only one of these lines inside the CSS Editor extension.<br>
 >*(Acces to the editor can be found in the settings menue.)*
 >
->>### Hosted on Github *(might not work)*:
+>>### Hosted on Github:
 >>
 >>
 >>```CSS
->>@import "https://raw.githubusercontent.com/femilu1/Custom-spicetify-theme-extension/refs/heads/main/spotify-spicetify_custom.css";
+>>@import "https://femilu1.github.io/Custom-spicetify-theme-extension/spotify-spicetify_custom.css";
 >>```
 >>
 >>**OR**
 >>
 >>*compressed version*:
 >>```CSS
->>@import "https://raw.githubusercontent.com/femilu1/Custom-spicetify-theme-extension/refs/heads/main/spotify-spicetify_custom.min.css";
+>>@import "https://femilu1.github.io/Custom-spicetify-theme-extension/spotify-spicetify_custom.min.css";
 >>```
 >
->>### Hosted on own domain *(should work)*:
+>>### Hosted on own domain:
 >>
 >>```CSS
 >>@import "https://gdpro.de/spotify/spotify-spicetify_custom.css";

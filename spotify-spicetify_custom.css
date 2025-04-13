@@ -62,11 +62,11 @@
 }
 a[aria-label*="Now playing:"] .cover-art-image{
     border: 5px solid rgba(255, 255, 255, 0.175) !important;
-    border-color: var(--spice-text) !important;
+    border-color: rgba(var(--spice-rgb-text), 0.5) !important;
 }
 .npv-what-is-playing .npv-cross-fade-image{
   border: 0.75rem solid !important;
-  border-color: var(--spice-text) !important;
+  border-color: rgba(var(--spice-rgb-text), 0.5) !important;
 }
 .npv-lyrics .npv-cross-fade-image{
   border: 3.5px solid rgba(255, 255, 255, 0.175) !important;
@@ -109,8 +109,10 @@ div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContain
   position: relative;
   opacity: 0.85;
 }
+/* ----- */
 
 /* video-cover-image (alternate between default and this when clicked on looping video)*/
+  /*  Div video Container */
 div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV{
   aspect-ratio: 1 / 1 !important;
   height: auto;
@@ -125,17 +127,21 @@ div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverAr
   position: relative;
   opacity: 0.85;
 }
+div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV:has( > video){
+  border-radius: 50%;
+  border: 5px solid rgba(var(--spice-rgb-text), 0.5) !important;
+}
 
+  /*  Video */
 div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV > video{
   aspect-ratio: 1 / 1 !important;
   filter: blur(0.15rem) hue-rotate(7.5deg);
   border-radius: 50%;
-  border: 5px solid rgba(255, 255, 255, 0.175) !important;
-  border-color: rgba(var(--spice-rgb-text), 0.25) !important;
+  border: 0px solid transparent !important;
 }
 
-
-div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div:before, div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer > div:after{
+  /*  Container (remove overlay gradient for video-cover ) */
+div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div:nth-of-type(2):before, div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div:nth-of-type(2):after{
   content: none;
   visibility: hidden;
 }
@@ -155,10 +161,11 @@ div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverAr
 
 div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:has(> div > div > div.canvasVideoContainerNPV > video){
   aspect-ratio: 1 !important;
+  transition: margin-top 0.35s ease-in-out;
 }
 
 div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA):has(> div > div > div.canvasVideoContainerNPV > video){
-  margin-top: initial !important;
+  margin-top: 20px !important;
 }
 
 aside.NowPlayingView > div:has(.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV) > div:nth-of-type(1) > div:is(.yvZooOj0rpfRS__cAUCo){
@@ -166,7 +173,7 @@ aside.NowPlayingView > div:has(.main-nowPlayingView-coverArtContainer:is(.pUIBQ9
   padding-inline: initial !important;
   position: initial  !important;
 }
-
+/* ----- */
 
 /* Mask and background styles for cover art to let look like a vinyl record */
 div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a > div > .cover-art::after, .npv-what-is-playing .npv-cover-art > div::after, .npv-lyrics .npv-cross-fade-container::after,div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV:has( > video):after {

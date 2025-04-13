@@ -111,7 +111,7 @@ div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContain
 }
 /* ----- */
 
-/* video-cover-image (alternate between default and this when clicked on looping video)*/
+/* video-cover-image (switch between this and default by clicking on looping video)*/
   /*  Div video Container */
 div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV{
   aspect-ratio: 1 / 1 !important;
@@ -120,7 +120,7 @@ div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverAr
   
   --angle_animation: 20deg !important;
   --angle_animation-y: -12.5deg !important;
-  --scale: 0.95 !important;
+  --scale: 0.9 !important;
   
   animation: rotating-angle-with-scale 12s ease-in-out alternate infinite;
   clip-path: circle(50% at 50% 50%) !important;
@@ -287,7 +287,7 @@ div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContain
   visibility: hidden;
 }
 
-div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a > .main-nowPlayingView-coverArt{
+div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a > .main-nowPlayingView-coverArt, div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer > div > div:has(> div.canvasVideoContainerNPV > video){
   filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.75));
 }
 .npv-what-is-playing .npv-cover-art{

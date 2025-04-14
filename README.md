@@ -1,8 +1,8 @@
-# Femilu's custom spicetify theme extension
+# Femilu's custom spicetify theme extension <sub>[![last commit](https://img.shields.io/github/last-commit/femilu1/Custom-spicetify-theme-extension?label=Custom%20spicetify%20theme%20extension&style=plastic)](https://github.com/femilu1/Custom-spicetify-theme-extension)</sub>
 
-This CSS <ins>extends and edits</ins> the [DefaultDynamic](https://github.com/JulienMaille/spicetify-dynamic-theme) custom spicetify theme.
+This CSS <ins>extends and edits</ins> the <sub>[![DefaultDynamic release](https://img.shields.io/github/v/release/JulienMaille/spicetify-dynamic-theme.svg?label=DefaultDynamic&style=plastic)](https://github.com/JulienMaille/spicetify-dynamic-theme)</sub> custom spicetify theme.
 
-This custom theme extension should be loaded via the [**CSS Editor extension** from FlafyDev](https://github.com/FlafyDev/spotify-css-editor) which can also be found on the spicetify marketplace.
+This custom theme extension should be loaded via the <sub>[![spotify-css-editor last commit](https://img.shields.io/github/last-commit/FlafyDev/spotify-css-editor?label=spotify-css-editor&style=plastic)](https://github.com/FlafyDev/spotify-css-editor)</sub> extension which can also be found on the <sub>[![marketplace release](https://img.shields.io/github/v/release/spicetify/marketplace.svg?label=Marketplace&style=plastic)]([https://github.com/JulienMaille/spicetify-dynamic-theme](https://github.com/spicetify/marketplace/wiki/Installation#auto-install))</sub>.
 
 ------
 >## How to "install"
@@ -41,7 +41,7 @@ This custom theme extension should be loaded via the [**CSS Editor extension** f
 ------
 
 >## Preview
->I have the [**Playbar Clock by ohitstom**](https://github.com/ohitstom/spicetify-extensions) extension and the **Fix progress bar displacement** snippet installed in the previews.
+>I have the <sub>[![playbarClock last commit](https://img.shields.io/github/last-commit/ohitstom/spicetify-extensions/main?path=playbarClock/playbarClock.js&label=playbarClock&style=plastic)](https://github.com/ohitstom/spicetify-extensions/tree/main/playbarClock)</sub> extension and the **Fix progress bar displacement** snippet installed in these previews.
 >
 >>### Main
 >>![animation](https://github.com/user-attachments/assets/12b0b1a3-503c-4dff-ade1-015d574774c4)

@@ -162,6 +162,7 @@ div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverAr
 div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:has(> div > div > div.canvasVideoContainerNPV > video){
   aspect-ratio: 1 !important;
   transition: margin-top 0.35s ease-in-out;
+  height: initial !important;
 }
 
 div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA):has(> div > div > div.canvasVideoContainerNPV > video){
@@ -474,6 +475,18 @@ div.main-entityHeader-container > div:nth-child(1), div.main-actionBarBackground
 .Ps9zgW56WZaBVLo1n3cg,[aria-label="Trailer"][title="Trailer"]{
   color: initial !important;
 }
+
+/* Rounded covers for left sidebar and main */
+div.main-entityHeader-image img.main-entityHeader-image, div.contentSpacing div.main-rootlist-wrapper > div:nth-child(2) div.main-trackList-rowSectionStart > img{
+  border-radius: 17.5% !important;
+}
+[aria-label="Your Library"] div.x-entityImage-imageContainer:not(.x-entityImage-circle) img.main-image-image.x-entityImage-image, [aria-label="Your Library"] div.HeaderSideArea:has(div.x-entityImage-imageContainer:not(.x-entityImage-circle) img.main-image-image.x-entityImage-image) div:has(> div > button){
+  border-radius: 27.5% !important;
+}
+[aria-label="Your Library"] div.x-entityImage-imageContainer:not(.x-entityImage-circle):has(img.main-image-image.x-entityImage-image){
+  background-color: transparent !important;
+}
+/* ----- */
 
 /* Extras */
   /* Hide some stuff */

@@ -176,7 +176,7 @@ aside.NowPlayingView > div:has(.main-nowPlayingView-coverArtContainer:is(.pUIBQ9
 /* ----- */
 
 /* Mask and background styles for cover art to let look like a vinyl record */
-div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a > div > .cover-art::after, .npv-what-is-playing .npv-cover-art > div::after, .npv-lyrics .npv-cross-fade-container::after,div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV:has( > video):after {
+div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a:not([data-context-item-type="episode"]) > div > .cover-art::after, .Root:not(:has(div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a[data-context-item-type="episode"])) .npv-what-is-playing .npv-cover-art > div::after, .npv-lyrics .npv-cross-fade-container::after,div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV:has( > video):after {
   content: "";
   position: absolute;
   top: 0;
@@ -266,21 +266,36 @@ div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContain
   mask-size: 100% 100%,contain;
   mask-repeat: no-repeat;
   mask-position: center;
-  mask-mode: alpha;
-  mask-type: alpha;
   border-radius: 50%;
 }
 
-/* Mask for small dot in cover art image */
-div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a > div > .cover-art > img, .npv-what-is-playing .npv-cover-art > div > img, .npv-lyrics .npv-cross-fade-container > img, div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV > video{
+/* Mask for small hole in the center of cover art image */
+div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a:not([data-context-item-type="episode"]) > div > .cover-art > img, .Root:not(:has(div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a[data-context-item-type="episode"])) .npv-what-is-playing .npv-cover-art > div > img, .npv-lyrics .npv-cross-fade-container > img, div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV > video{
   mask-image: radial-gradient(circle, rgb(0 0 0 / 0%) 3%, rgb(0 0 0) 4%, rgb(0 0 0) 100%);
   mask-size: 100% 100%, contain;
   mask-repeat: no-repeat;
-  mask-mode: alpha;
-  mask-type: alpha;
   mask-position: center center;
-  mask-repeat: no-repeat;
 }
+div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a:not([data-context-item-type="episode"]) > div > .cover-art, .Root:not(:has(div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a[data-context-item-type="episode"])) .npv-what-is-playing .npv-cover-art > div, .npv-lyrics .npv-cross-fade-container, div.main-nowPlayingView-nowPlayingWidget > div > div.main-nowPlayingView-coverArtContainer:is(.pUIBQ9cykHKYx2A2ZIPA) > div > div > div.canvasVideoContainerNPV{
+  mask-image: radial-gradient(circle at center, rgb(0 0 0 / 5%) 3%, rgb(0 0 0) 4%);
+  mask-size: 100% 100%, contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+}
+  /* special for episodes */
+div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a[data-context-item-type="episode"] > div > .cover-art > img, .Root:has(div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a[data-context-item-type="episode"]) .npv-what-is-playing .npv-cover-art > div > img {
+  mask-image: radial-gradient(circle, rgb(255 0 0 / 0%) 10%, rgb(0 0 0) 11%, rgb(0 0 0) 100%);
+  mask-size: 100% 100%, contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+}
+div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a[data-context-item-type="episode"] > div > .cover-art, .Root:has(div.main-nowPlayingView-nowPlayingWidget div.main-nowPlayingView-coverArtContainer a[data-context-item-type="episode"]) .npv-what-is-playing .npv-cover-art > div {
+  mask-image: radial-gradient(circle at center, rgb(0 0 0 / 5%) 10%, rgb(0 0 0) 11%);
+  mask-size: 100% 100%, contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+}
+/* ----- */
 
 /* Hide default backup cover art icon */
 .cover-art-icon{
